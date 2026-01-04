@@ -19,6 +19,8 @@
 (defvar *websocket-port* 12345)
 (defvar *websocket*)
 
+(setf hunchentoot:*default-connection-timeout* 3600)
+
 (defun script (host port &key ssl)
   "Output Websocket Javascript."
   (format nil "const ws = new WebSocket('~A://~A:~A/reload');
